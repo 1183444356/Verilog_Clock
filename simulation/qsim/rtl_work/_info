@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\CEIE\Desktop\test\simulation\qsim
+vtest
+Ig>kf9_AiXWJPG@LRXAml42
+V9:Pf>Ck@m;92]k371OP9S0
+Z1 dC:\Users\CEIE\Desktop\FPGA05.07\simulation\qsim
+w1715395444
+8test.vo
+Ftest.vo
+L0 31
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-work work -O0
+!i10b 1
+!s100 KdXN^iZ2NfzJRJ=oTL`Ce1
+!s85 0
+!s108 1715395445.646000
+!s107 test.vo|
+!s90 -work|work|test.vo|
+!s101 -O0
+vtest_vlg_check_tst
+!i10b 1
+!s100 XR7Tcf]GJza;VU@Y:TPgK3
+I0<giNHa^zV:nlYnYTIm9[3
+VnMD8B`an9MIHJ5`UJn]_?0
+R1
+Z4 w1715395442
+Z5 8Waveform.vwf.vt
+Z6 FWaveform.vwf.vt
+L0 61
+R2
+r1
+!s85 0
+31
+Z7 !s108 1715395445.786000
+Z8 !s107 Waveform.vwf.vt|
+Z9 !s90 -work|work|Waveform.vwf.vt|
+!s101 -O0
+R3
+vtest_vlg_sample_tst
+!i10b 1
+!s100 Yoo6TG<d^;6X7aL><0LLW1
+I9eLVN0KD^j^o<CbjJ4;MF2
+VbJn?cXjYG1@IDimA12C3P1
+R1
+R4
+R5
+R6
+L0 29
+R2
+r1
+!s85 0
+31
+R7
+R8
+R9
+!s101 -O0
+R3
+vtest_vlg_vec_tst
+!i10b 1
+!s100 ES39E4@7FS1KY2cUW8S>K0
+I0LX<^7P^J[T^NK4U<i@zJ0
+Va5b;6:2=HDheAU5FQATGI3
+R1
+R4
+R5
+R6
+L0 417
+R2
+r1
+!s85 0
+31
+R7
+R8
+R9
+!s101 -O0
+R3

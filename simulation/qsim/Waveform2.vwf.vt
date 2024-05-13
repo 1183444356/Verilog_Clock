@@ -1,0 +1,294 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "05/06/2024 21:20:57"
+                                                                        
+// Verilog Self-Checking Test Bench (with test vectors) for design :    test
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module test_vlg_sample_tst(
+	clk,
+	reset,
+	sampler_tx
+);
+input  clk;
+input  reset;
+output sampler_tx;
+
+reg sample;
+time current_time;
+always @(clk or reset)
+                                                                                
+begin                                                 
+ if ($realtime > 0)                                   
+ begin                                                
+	if ($realtime == 0 || $realtime != current_time)  
+	begin									          
+		if (sample === 1'bx)                          
+			sample = 0;                               
+		else                                          
+			sample = ~sample;                         
+	end										          
+	current_time = $realtime;					      
+ end                                                  
+end                                                   
+
+assign sampler_tx = sample;
+endmodule
+
+module test_vlg_check_tst (
+	clk_1s,
+	cout_h,
+	cout_m,
+	cout_s,
+	decodeout0,
+	decodeout1,
+	decodeout2,
+	decodeout3,
+	decodeout4,
+	decodeout5,
+	qout_h,
+	qout_m,
+	qout_s,
+	sampler_rx
+);
+input  clk_1s;
+input  cout_h;
+input  cout_m;
+input  cout_s;
+input [6:0] decodeout0;
+input [6:0] decodeout1;
+input [6:0] decodeout2;
+input [6:0] decodeout3;
+input [6:0] decodeout4;
+input [6:0] decodeout5;
+input [7:0] qout_h;
+input [7:0] qout_m;
+input [7:0] qout_s;
+input sampler_rx;
+
+reg  clk_1s_expected;
+reg  cout_h_expected;
+reg  cout_m_expected;
+reg  cout_s_expected;
+reg [6:0] decodeout0_expected;
+reg [6:0] decodeout1_expected;
+reg [6:0] decodeout2_expected;
+reg [6:0] decodeout3_expected;
+reg [6:0] decodeout4_expected;
+reg [6:0] decodeout5_expected;
+reg [7:0] qout_h_expected;
+reg [7:0] qout_m_expected;
+reg [7:0] qout_s_expected;
+
+reg  clk_1s_prev;
+reg  cout_h_prev;
+reg  cout_m_prev;
+reg  cout_s_prev;
+reg [6:0] decodeout0_prev;
+reg [6:0] decodeout1_prev;
+reg [6:0] decodeout2_prev;
+reg [6:0] decodeout3_prev;
+reg [6:0] decodeout4_prev;
+reg [6:0] decodeout5_prev;
+reg [7:0] qout_h_prev;
+reg [7:0] qout_m_prev;
+reg [7:0] qout_s_prev;
+
+reg  clk_1s_expected_prev;
+
+reg  last_clk_1s_exp;
+
+reg trigger;
+
+integer i;
+integer nummismatches;
+
+reg [1:13] on_first_change ;
+
+
+initial
+begin
+trigger = 0;
+i = 0;
+nummismatches = 0;
+on_first_change = 13'b1;
+end
+
+// update real /o prevs
+
+always @(trigger)
+begin
+	clk_1s_prev = clk_1s;
+	cout_h_prev = cout_h;
+	cout_m_prev = cout_m;
+	cout_s_prev = cout_s;
+	decodeout0_prev = decodeout0;
+	decodeout1_prev = decodeout1;
+	decodeout2_prev = decodeout2;
+	decodeout3_prev = decodeout3;
+	decodeout4_prev = decodeout4;
+	decodeout5_prev = decodeout5;
+	qout_h_prev = qout_h;
+	qout_m_prev = qout_m;
+	qout_s_prev = qout_s;
+end
+
+// update expected /o prevs
+
+always @(trigger)
+begin
+	clk_1s_expected_prev = clk_1s_expected;
+end
+
+
+
+// expected clk_1s
+initial
+begin
+	clk_1s_expected = 1'bX;
+	clk_1s_expected = #999000 1'b0;
+end 
+// generate trigger
+always @(clk_1s_expected or clk_1s or cout_h_expected or cout_h or cout_m_expected or cout_m or cout_s_expected or cout_s or decodeout0_expected or decodeout0 or decodeout1_expected or decodeout1 or decodeout2_expected or decodeout2 or decodeout3_expected or decodeout3 or decodeout4_expected or decodeout4 or decodeout5_expected or decodeout5 or qout_h_expected or qout_h or qout_m_expected or qout_m or qout_s_expected or qout_s)
+begin
+	trigger <= ~trigger;
+end
+
+always @(posedge sampler_rx or negedge sampler_rx)
+begin
+`ifdef debug_tbench
+	$display("Scanning pattern %d @time = %t",i,$realtime );
+	i = i + 1;
+	$display("| expected clk_1s = %b | expected cout_h = %b | expected cout_m = %b | expected cout_s = %b | expected decodeout0 = %b | expected decodeout1 = %b | expected decodeout2 = %b | expected decodeout3 = %b | expected decodeout4 = %b | expected decodeout5 = %b | expected qout_h = %b | expected qout_m = %b | expected qout_s = %b | ",clk_1s_expected_prev,cout_h_expected_prev,cout_m_expected_prev,cout_s_expected_prev,decodeout0_expected_prev,decodeout1_expected_prev,decodeout2_expected_prev,decodeout3_expected_prev,decodeout4_expected_prev,decodeout5_expected_prev,qout_h_expected_prev,qout_m_expected_prev,qout_s_expected_prev);
+	$display("| real clk_1s = %b | real cout_h = %b | real cout_m = %b | real cout_s = %b | real decodeout0 = %b | real decodeout1 = %b | real decodeout2 = %b | real decodeout3 = %b | real decodeout4 = %b | real decodeout5 = %b | real qout_h = %b | real qout_m = %b | real qout_s = %b | ",clk_1s_prev,cout_h_prev,cout_m_prev,cout_s_prev,decodeout0_prev,decodeout1_prev,decodeout2_prev,decodeout3_prev,decodeout4_prev,decodeout5_prev,qout_h_prev,qout_m_prev,qout_s_prev);
+`endif
+	if (
+		( clk_1s_expected_prev !== 1'bx ) && ( clk_1s_prev !== clk_1s_expected_prev )
+		&& ((clk_1s_expected_prev !== last_clk_1s_exp) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port clk_1s :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", clk_1s_expected_prev);
+		$display ("     Real value = %b", clk_1s_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_clk_1s_exp = clk_1s_expected_prev;
+	end
+
+	trigger <= ~trigger;
+end
+initial 
+
+begin 
+$timeformat(-12,3," ps",6);
+#10000000;
+if (nummismatches > 0)
+	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
+else
+	$display ("Simulation passed !");
+$finish;
+end 
+endmodule
+
+module test_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg clk;
+reg reset;
+// wires                                               
+wire clk_1s;
+wire cout_h;
+wire cout_m;
+wire cout_s;
+wire [6:0] decodeout0;
+wire [6:0] decodeout1;
+wire [6:0] decodeout2;
+wire [6:0] decodeout3;
+wire [6:0] decodeout4;
+wire [6:0] decodeout5;
+wire [7:0] qout_h;
+wire [7:0] qout_m;
+wire [7:0] qout_s;
+
+wire sampler;                             
+
+// assign statements (if any)                          
+test i1 (
+// port map - connection between master ports and signals/registers   
+	.clk(clk),
+	.clk_1s(clk_1s),
+	.cout_h(cout_h),
+	.cout_m(cout_m),
+	.cout_s(cout_s),
+	.decodeout0(decodeout0),
+	.decodeout1(decodeout1),
+	.decodeout2(decodeout2),
+	.decodeout3(decodeout3),
+	.decodeout4(decodeout4),
+	.decodeout5(decodeout5),
+	.qout_h(qout_h),
+	.qout_m(qout_m),
+	.qout_s(qout_s),
+	.reset(reset)
+);
+
+// clk
+always
+begin
+	clk = 1'b0;
+	clk = #5000 1'b1;
+	#5000;
+end 
+
+// reset
+initial
+begin
+	reset = 1'b1;
+end 
+
+test_vlg_sample_tst tb_sample (
+	.clk(clk),
+	.reset(reset),
+	.sampler_tx(sampler)
+);
+
+test_vlg_check_tst tb_out(
+	.clk_1s(clk_1s),
+	.cout_h(cout_h),
+	.cout_m(cout_m),
+	.cout_s(cout_s),
+	.decodeout0(decodeout0),
+	.decodeout1(decodeout1),
+	.decodeout2(decodeout2),
+	.decodeout3(decodeout3),
+	.decodeout4(decodeout4),
+	.decodeout5(decodeout5),
+	.qout_h(qout_h),
+	.qout_m(qout_m),
+	.qout_s(qout_s),
+	.sampler_rx(sampler)
+);
+endmodule
+
